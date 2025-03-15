@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    <style>
+        .work-task { color: blue; }
+        .personal-task { color: green; }
+        .hobby-task { color: purple; }
+    </style>
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+        <li class="{{ task.category.class_name() }}">
+            {{ task.title }} ({{ task.category }})
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
